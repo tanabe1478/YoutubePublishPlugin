@@ -54,9 +54,9 @@ try mysite().publish(using: [
 ```
 
 ## Acknowledgement
-Thanks to John Sundell (@johnsundell) for creating Publish and SplashPublishPlugin.
+Thanks to John Sundell (@johnsundell) for creating [Publish](https://github.com/johnsundell/publish) and SplashPublishPlugin.
 
-Thanks to Guilherme Rambo (@insidegui) for creating the TwitterPublishPlugin that has been a inspiration for this plugin.
+Thanks to Guilherme Rambo (@insidegui) for creating the [TwitterPublishPlugin](https://github.com/insidegui/TwitterPublishPlugin) that has been a inspiration for this plugin.
 
 
 ## License
