@@ -32,7 +32,7 @@ Then import to use it:
 import YoutubePublishPlugin
 ```
 
-For more information on how to use the Swift Package Manager, check out[its official documentation](https://github.com/apple/swift-package-manager/tree/master/Documentation).
+For more information on how to use the Swift Package Manager, check out [its official documentation](https://github.com/apple/swift-package-manager/tree/master/Documentation).
 
 ## Usage
 
