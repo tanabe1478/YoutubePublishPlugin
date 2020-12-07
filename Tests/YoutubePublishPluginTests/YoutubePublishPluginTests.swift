@@ -6,7 +6,7 @@ final class YoutubePublishPluginTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(YoutubePublishPlugin().text, "Hello, World!")
+        // XCTAssertEqual(YoutubePublishPlugin().text, "Hello, World!")
     }
 
     static var allTests = [
