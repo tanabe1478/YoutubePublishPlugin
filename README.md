@@ -1,6 +1,6 @@
 # YoutubePublishPlugin
 
-A plugin for [Publish](https://github.com/JohnSundell/Publish) that let's you easily embed tweets in your posts.
+This plugin for [Publish](https://github.com/JohnSundell/Publish) will let you embed tweets in your posts easily.
 
 ## Installation
 
@@ -42,7 +42,8 @@ To embed a youtube in your post, use a blockquote in markdown, but add the "yout
 > youtube https://www.youtube.com/watch?v=Z-VfaG9ZN_U
 ```
 
-This plugin supports URLs of the format `https://youtu.be/ZyJwfxqpUXA` and `https://www.youtube.com/watch?v=Z-VfaG9ZN_U`.
+This plugin is compatible with `https://youtu.be/ZyJwfxqpUXA` and `https://www.youtube.com/watch?v=Z-VfaG9ZN_U` only.
+
 
 To install the plugin, add it to your site's publishing steps:
 
