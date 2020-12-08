@@ -26,7 +26,7 @@ let package = Package(
 )
 ```
 
-Then import to use it:
+And import to use it:
 
 ```swift
 import YoutubePublishPlugin
@@ -36,7 +36,7 @@ For more information on how to use the Swift Package Manager, check out [its off
 
 ## Usage
 
-To embed a youtube in your post, use a blockquote in markdown, but add the "youtube" prefix, like so:
+To embed a youtube in your post, use a blockquote in markdown, but add the "youtube" prefix, like this:
 
 ```
 > youtube https://www.youtube.com/watch?v=Z-VfaG9ZN_U
