@@ -4,7 +4,7 @@ This plugin for [Publish](https://github.com/JohnSundell/Publish) will let you e
 
 ## Installation
 
-To install it into your [Publish](https://github.com/johnsundell/publish) package, add it as a dependency within your `Package.swift` manifest:
+To install YoutubePublishPlugin into your [Publish](https://github.com/johnsundell/publish) package, add it as a dependency within your `Package.swift` manifest:
 
 ```swift
 let package = Package(
