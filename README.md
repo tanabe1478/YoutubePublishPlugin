@@ -1,6 +1,6 @@
 # YoutubePublishPlugin
 
-This plugin for [Publish](https://github.com/JohnSundell/Publish) will let you embed tweets in your posts easily.
+This plugin for [Publish](https://github.com/JohnSundell/Publish) will let you embed YouTube videos in your posts easily.
 
 ## Installation
 
