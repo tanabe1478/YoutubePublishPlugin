@@ -11,7 +11,7 @@ let package = Package(
     ...
     dependencies: [
         ...
-        .package(url: "https://github.com/tanabe1478/YoutubePublishPlugin.git", from: "0.1.0")
+        .package(url: "https://github.com/tanabe1478/YoutubePublishPlugin.git", from: "1.0.1")
     ],
     targets: [
         .target(
