@@ -35,7 +35,7 @@ struct YoutubeEmbedGenerator {
         
         // condition: youtu.be/0HHAo1mLgxY
         // https://youtu.be/0HHAo1mLgxY
-        guard let host = components.host, host == "youtu.be" else {
+        guard let host = components.host, host == "youtu.be" || host == "youtube.com" else {
             return .failure(.invalidURL)
         }
         
