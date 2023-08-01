@@ -23,13 +23,14 @@ struct YoutubeEmbedGenerator {
     }
     
     func generate() -> Result<EmbeddedYoutube, Error> {
+        debugPrint("url: \(youtubeURL), config: \(config)")
         guard let components = URLComponents(url: youtubeURL, resolvingAgainstBaseURL: false) else {
             return .failure(.invalidURL)
         }
         
         
         // condition: www.youtube.com
-        if let v = components.queryItems?.compactMap { $0 }.filter({ $0.name == "v" }).first?.value {
+        if let v = components.queryItems?.compactMap ({ $0 }).filter({ $0.name == "v" }).first?.value {
             return .success(EmbeddedYoutube(width: config.width, height: config.height, html: html(from: v)))
         }
         
