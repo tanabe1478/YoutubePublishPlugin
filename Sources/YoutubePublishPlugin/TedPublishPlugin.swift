@@ -1,8 +1,8 @@
 //
-//  YoutubePublishPlugin.swift
+//  TedPublishPlugin.swift
+//  
 //
-//
-//  Created by tanabe.nobuyuki on 2020/12/07.
+//  Created by Klaus Kneupner on 02/08/2023.
 //
 
 import Foundation
@@ -11,17 +11,17 @@ import Ink
 
 
 public extension Plugin {
-    static func youtube(renderer: VideoRenderer = DefaultVideoRenderer()) -> Self {
-        Plugin(name: "Youtube") { context in
-            context.markdownParser.addModifier(.youtubeBlockQuote(using: renderer))
+    static func tedTalks(renderer: VideoRenderer = DefaultVideoRenderer()) -> Self {
+        Plugin(name: "Ted Video Plugin") { context in
+            context.markdownParser.addModifier(.tedTalksBlockQuote(using: renderer))
         }
     }
 }
 
 public extension Modifier {
-    static func youtubeBlockQuote(using renderer: VideoRenderer) -> Self {
+    static func tedTalksBlockQuote(using renderer: VideoRenderer) -> Self {
         return Modifier(target: .blockquotes) { html, markdown in
-            let prefix = "youtube "
+            let prefix = "tedtalk "
             var markdown = markdown.dropFirst().trimmingCharacters(in: .whitespaces)
             guard markdown.hasPrefix(prefix) else {
                 return html
@@ -33,9 +33,9 @@ public extension Modifier {
                 fatalError("Invalid video URL \(markdown)")
             }
             
-            let generator = YoutubeEmbedGenerator(url: url, configuration: .default)
-            let youtube = try! generator.generate().get()
-            return try! renderer.render(video: youtube)
+            let generator = TedTalkEmbedGenerator(url: url, configuration: .default)
+            let video = try! generator.generate().get()
+            return try! renderer.render(video: video)
         }
     }
 }

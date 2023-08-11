@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct YoutubeEmbedConfiguration  {
+public struct VideoEmbedConfiguration  {
     var width: Int
     var height: Int
     
@@ -15,5 +15,5 @@ struct YoutubeEmbedConfiguration  {
         self.height = height
     }
     
-    static var `default`: YoutubeEmbedConfiguration { YoutubeEmbedConfiguration() }
+    static var `default`: VideoEmbedConfiguration { VideoEmbedConfiguration() }
 }

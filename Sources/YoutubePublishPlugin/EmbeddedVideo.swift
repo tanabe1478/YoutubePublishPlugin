@@ -6,7 +6,7 @@
 //
 
 import Foundation
-public struct EmbeddedYoutube: Hashable, Codable {
+public struct EmbeddedVideo: Hashable, Codable {
     public let width: Int
     public let height: Int
     public let html: String
