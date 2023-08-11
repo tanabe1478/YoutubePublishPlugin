@@ -1,6 +1,6 @@
 # YoutubePublishPlugin
 
-This plugin for [Publish](https://github.com/JohnSundell/Publish) will let you embed YouTube videos in your posts easily.
+This plugin for [Publish](https://github.com/JohnSundell/Publish) will let you embed YouTube videos and TedTalks in your posts easily.
 
 ## Installation
 
@@ -11,7 +11,7 @@ let package = Package(
     ...
     dependencies: [
         ...
-        .package(url: "https://github.com/tanabe1478/YoutubePublishPlugin.git", from: "1.0.1")
+        .package(url: "https://github.com/tanabe1478/YoutubePublishPlugin.git", from: "1.0.5")
     ],
     targets: [
         .target(
@@ -36,6 +36,9 @@ For more information on how to use the Swift Package Manager, check out [its off
 
 ## Usage
 
+You can use Youtube and Ted Talks separately or together. 
+
+### Youtube
 To embed a youtube in your post, use a blockquote in markdown, but add the "youtube" prefix, like this:
 
 ```
@@ -43,7 +46,6 @@ To embed a youtube in your post, use a blockquote in markdown, but add the "yout
 ```
 
 This plugin is compatible with `https://youtu.be/ZyJwfxqpUXA` and `https://www.youtube.com/watch?v=Z-VfaG9ZN_U` only.
-
 
 To install the plugin, add it to your site's publishing steps:
 
@@ -53,6 +55,23 @@ try mysite().publish(using: [
     // ...
 ])
 ```
+
+### Ted Talks
+To embed a Ted Talk in your post, use a blockquote in markdown, but add the "tedtalk" prefix, like this:
+
+```
+> tedtalk https://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action
+```
+
+To install the plugin, add it to your site's publishing steps:
+
+```swift
+try mysite().publish(using: [
+    .installPlugin(.tedTalks()),
+    // ...
+])
+```
+
 
 ## Acknowledgement
 Thanks to John Sundell (@johnsundell) for creating [Publish](https://github.com/johnsundell/publish) and SplashPublishPlugin.
