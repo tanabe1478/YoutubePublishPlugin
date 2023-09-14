@@ -6,39 +6,38 @@ struct YoutubeEmbedGenerator {
         var localizedDescription: String
         
         static let invalidURL = Error(localizedDescription: "Failed to construct an URL")
-        static let timeout = Error(localizedDescription: "The request to Twitter's embed API timed out")
+        //static let timeout = Error(localizedDescription: "The request to Twitter's embed API timed out")
     }
 
-    private var config: YoutubeEmbedConfiguration
+    private var config: VideoEmbedConfiguration
 
     let youtubeURL: URL
     
-    init(url: URL, configuration: YoutubeEmbedConfiguration) {
+    init(url: URL, configuration: VideoEmbedConfiguration) {
         self.youtubeURL = url
         self.config = configuration
     }
     
-    private func html(from v: String) -> String {
-        "<div class=\"youtube\"><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/\(v)\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe></div>"
-    }
-    
-    func generate() -> Result<EmbeddedYoutube, Error> {
+    func generate() -> Result<EmbeddedVideo, Error> {
+        //debugPrint("url: \(youtubeURL), config: \(config)")
         guard let components = URLComponents(url: youtubeURL, resolvingAgainstBaseURL: false) else {
             return .failure(.invalidURL)
         }
         
         
         // condition: www.youtube.com
-        if let v = components.queryItems?.compactMap { $0 }.filter({ $0.name == "v" }).first?.value {
-            return .success(EmbeddedYoutube(width: config.width, height: config.height, html: html(from: v)))
+        if let v = components.queryItems?.compactMap ({ $0 }).filter({ $0.name == "v" }).first?.value {
+            let htmlCode = html(portal: .youtube, from: v, width: config.width, height: config.height)
+            return .success(EmbeddedVideo(width: config.width, height: config.height, html: htmlCode))
         }
         
         // condition: youtu.be/0HHAo1mLgxY
         // https://youtu.be/0HHAo1mLgxY
-        guard let host = components.host, host == "youtu.be" else {
+        guard let host = components.host, host == "youtu.be"  else {
             return .failure(.invalidURL)
         }
         
-        return .success(EmbeddedYoutube(width: config.width, height: config.height, html: html(from: components.path)))
+        let htmlCode = html(portal: .youtube, from: components.path, width: config.width, height: config.height)
+        return .success(EmbeddedVideo(width: config.width, height: config.height, html: htmlCode))
     }
 }
